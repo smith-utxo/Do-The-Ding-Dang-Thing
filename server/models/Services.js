@@ -1,24 +1,14 @@
 const { Schema } = require('mongoose');
 
+//subdocument schema, it won't become its own model but we'll use it as the schma for the User's 'services' array in User.js
 const servicesSchema = new Schema (
     {
-        servicesBody:{
+        descripton: {
             type: String,
             required: true,
-            maxLength: 100
-        },
-        username: {
-            type: String,
-            required: true
+            maxLength: 150
         }
     },
-    {
-        toJSON: {
-            getters: true
-        }
-    }
 );
-
-const Services = model('Services', servicesSchema)
 
 modules.export = servicesSchema;

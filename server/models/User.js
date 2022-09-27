@@ -21,15 +21,12 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        // which line is the correct way?
+        phone: {
+            type: String,
+            match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
+        },
+        //set services to be an array o fdata that adheres to the servicesSechema 
         services: [servicesSchema],
-        //OR
-        services: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Services'
-            }
-        ]
     },
     //set this to use virtuals
     {
