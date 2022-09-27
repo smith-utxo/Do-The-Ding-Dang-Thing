@@ -37,5 +37,20 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+        addReview: async(parent, args, context) => {
+            if (context.user) {
+                const review = await Review.create({...args, username: context.user.username});
+
+                await User.findByIdAndUpdate(
+                    {_id: context.user._id},
+                    { $push: { reviews: review._id } },
+                    { new: true }
+                );
+
+                return review;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        // addService??
     }
 }
