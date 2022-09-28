@@ -9,7 +9,7 @@ const servicesSchema = new Schema (
                 type: String
             }
         ],
-        descripton: {
+        description: {
             type: String,
             required: true,
             maxLength: 150
