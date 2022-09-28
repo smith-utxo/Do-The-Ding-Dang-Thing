@@ -1,8 +1,6 @@
 const { Schema, model } = require('mongoose');
+//to hash the password
 const bcrypt = require('bcrypt');
-
-//import other Schemas here
-const servicesSchema = require('../models/Services');
 
 const userSchema = new Schema(
     {
@@ -25,8 +23,11 @@ const userSchema = new Schema(
             type: String,
             match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
         },
-        //set services to be an array o fdata that adheres to the servicesSechema 
-        services: [servicesSchema],
+        //this now is able to hold a review
+        services: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Service'
+        }],
     },
     //set this to use virtuals
     {
@@ -42,7 +43,6 @@ userSchema.pre('save', async function (next) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
-
     next();
 });
 
