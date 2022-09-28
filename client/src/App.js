@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import './App.css';
+import ReviewForm from './components/ReviewForm';
+
+import Nav from './components/Navigation';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import ReviewForm from './components/ReviewForm';
-import Nav from './components/Navigation';
+
+import Login from './components/pages/Login'; 
+import Categories from './components/Categories';
 
 function App() {
 
   const [categories] = useState([
     {
-      name: "Lawn&Garden"
+      name: "Home"
+    },
+    {
+      name: "LawnAndGarden"
     },
     {
       name: "Plumbing"
@@ -22,17 +29,28 @@ function App() {
     },
     {
       name: "Web Development"
+    }, 
+    {
+      name: "Login/SignUp"
     }
-  ])
-  return (
-    <div>
-      <Header />
-      <Nav
-        categories={categories}></Nav>
+  ]);
 
-      <ReviewForm />
-      <Footer />
-    </div>
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
+    return (
+      <div className="content">
+          <Header />
+        <Nav
+          categories={categories}
+          currentCategory={currentCategory}
+          setCurrentCategory={setCurrentCategory}
+        ></Nav>
+        <main>
+          <Categories currentCategory={currentCategory}></Categories>
+          
+        </main>
+        <Footer></Footer>
+      </div>
   );
 }
 
