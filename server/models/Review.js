@@ -7,15 +7,18 @@ const reviewSchema = new Schema(
             required: true,
             maxlength: 250
         },
-        //do we need this to search by user?
+        //this is the username of the user leaving the review
         username: {
             type: String,
             required: true
         },
+        createAt: {
+
+        },
         rating: {
             type: Int,
-            min: 1,
-            max: 10,
+            minlength: 1,
+            maxlength: 5,
             require: true
         }
     },
@@ -26,4 +29,6 @@ const reviewSchema = new Schema(
     }
 );
 
-module.exports = reviewSchema;
+const Review = model('Review', reviewSchema)
+
+module.exports = Review;
