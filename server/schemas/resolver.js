@@ -13,7 +13,18 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
         //TO DO: use the service id to look for it inside all the user services arrays... the reverse of bonus in project 18 ... use the mongoose $
-        services: 
+        services: async () => {
+            return await Services.find();
+        },
+        providers: async (parent, { service, user }) => {
+            const params = {};
+
+            if (service) {
+                params.service = service;
+            }
+
+            return await User.find(params).populate('service');
+        },
     },
 
     Mutation: {

@@ -14,6 +14,7 @@ type Service {
     title: String
     description: String
     reviews: [Review]
+    users: [User]
 }
 
 type Review {
