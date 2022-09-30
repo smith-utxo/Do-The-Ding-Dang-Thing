@@ -23,5 +23,8 @@
   "homepage": "https://github.com/smith-utxo/do-the-ding-dang-thing",
   "devDependencies": {
     "concurrently": "^7.4.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }
