@@ -42,7 +42,7 @@ const resolvers = {
         },
 
         //TO DO: This needs to be fixed
-        addReview: async (parent, args, context) => {
+        addReview: async (parent, {serviceId}, args) => {
             //only allows logged in users to leave reviews
             if (context.user) {
               const review = await Review.create({ ...args, username: context.user.username });
