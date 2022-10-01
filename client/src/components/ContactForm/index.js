@@ -9,26 +9,26 @@ function ContactForm() {
   });
 
   const { name, email, message } = formState;
-  
-  const [errorMessage, setErrorMessage] = useState('');
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleChange(e) {
     if (e.target.name === "email") {
       const isValid = validateEmail(e.target.value);
       console.log(isValid);
-      if(!isValid){
-        setErrorMessage('Your Email is invalid');
+      if (!isValid) {
+        setErrorMessage("Your Email is invalid");
       } else {
-        setErrorMessage('');
+        setErrorMessage("");
       }
     } else {
-      if(!e.target.value.length) {
+      if (!e.target.value.length) {
         setErrorMessage(`${e.target.name} is required`);
       } else {
         setErrorMessage("");
       }
     }
-    if(!errorMessage) {
+    if (!errorMessage) {
       setFormState({ ...formState, [e.target.name]: e.target.value });
     }
   }
@@ -39,29 +39,42 @@ function ContactForm() {
   }
   return (
     <section>
-      <h1>Contact me</h1>
+      <h1>Get help</h1>
       <form id="contact-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            defaultValue={name}
-            onBlur={handleChange}
-          />
+        <div className="field">
+          <label className="label" htmlFor="name">
+            Name:
+          </label>
+          <div className="control">
+            <input
+              className="input is-info"
+              type="text"
+              name="name"
+              defaultValue={name}
+              onBlur={handleChange}
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">email address:</label>
-          <input
-            type="email"
-            name="email"
-            defaultValue={email}
-            onBlur={handleChange}
-          />
+        <div className="field">
+          <label className="label" htmlFor="email">
+            email address:
+          </label>
+          <div className="control">
+            <input
+              className="input is-info"
+              type="email"
+              name="email"
+              defaultValue={email}
+              onBlur={handleChange}
+            />
+          </div>
         </div>
-        <div>
-          <label htmlFor="message">message:</label>
+        <div className="field">
+          <label className="label" htmlFor="message">
+            Message:
+          </label>
           <textarea
+            className="textarea is-info"
             name="message"
             rows="5"
             defaultValue={message}
@@ -70,10 +83,10 @@ function ContactForm() {
         </div>
         {errorMessage && (
           <div>
-            <p>{errorMessage}</p>
+            <p className="box warning-box">{errorMessage}</p>
           </div>
         )}
-        <button type="submit">Submit</button>
+        <button type="submit" className="button is-primary">Submit</button>
       </form>
     </section>
   );

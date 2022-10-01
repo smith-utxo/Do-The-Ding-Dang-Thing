@@ -5,9 +5,10 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import Nav from './components/Navigation';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import ContactForm from './components/ContactForm';
+// import ContactForm from './components/ContactForm';
 import Login from './components/pages/Login';
 import Categories from './components/Categories';
+import 'bulma/css/bulma.min.css';
 
 // Establish a connection to the back-end server's /graphql endpoint
 const httpLink = createHttpLink({

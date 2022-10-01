@@ -26,18 +26,19 @@ const Modal = ({ showModal, setShowModal }) => {
   return (
     <>
       {showModal ? (
-        <div ref={modalRef} onClick={closeModal} className="modalBackdrop">
+        <div ref={modalRef} onClick={closeModal} className="modalBackground">
           <div className="modalContainer">
-            <h3 className="modalTitle">Contact</h3>
             <ContactForm />
-            <button onClick={() => setShowModal(!showModal)} type="button">
+            <button
+              onClick={() => setShowModal(!showModal)}
+              type="button"
+              className="delete"
+            >
               Close this modal
             </button>
           </div>
         </div>
-      ) : (
-        <p>this does not propogate properly</p>
-      )}
+      ) : null}
     </>
   );
 };
