@@ -5,7 +5,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import Nav from './components/Navigation';
 import Footer from './components/Footer';
 import Header from './components/Header';
-
+import ContactForm from './components/ContactForm';
 import Login from './components/pages/Login';
 import Categories from './components/Categories';
 
@@ -45,7 +45,10 @@ function App() {
     }
   ]);
 
+
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [showModal, setShowModal] = useState(false);
+  
   // Wrap the return portion in the ApolloProvider Client instance so it can interact with GraphQl
   return (
     <ApolloProvider client={client}>
@@ -58,9 +61,11 @@ function App() {
         ></Nav>
         <main>
           <Categories currentCategory={currentCategory}></Categories>
-
         </main>
-        <Footer></Footer>
+        <Footer
+          showModal={showModal}
+          setShowModal={setShowModal}
+        ></Footer>
       </div>
     </ApolloProvider>
   );
