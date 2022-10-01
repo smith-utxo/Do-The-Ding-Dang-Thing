@@ -8,9 +8,7 @@ function Nav(props) {
       <ul className="flex-row">
         {categories.map((Category) => (
           <li className={"mx-2"} key={Category.name}>
-            <span onClick={() => setCurrentCategory(Category)}>
-              {Category.name}
-            </span>
+            <span onClick={() => setCurrentCategory(Category)} style={{cursor:'pointer'}}>{Category.name}</span>
           </li>
         ))}
       </ul>

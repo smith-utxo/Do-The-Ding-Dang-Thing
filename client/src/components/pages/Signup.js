@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../utils/mutations';
+import { ADD_USER } from '../../utils/mutations';
 
 
-const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN_USER);
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -22,29 +26,31 @@ const Login = (props) => {
     event.preventDefault();
 
     try {
-      const { data } = await login({
+      const { data } = await addUser({
         variables: { ...formState },
       });
 
-  /*     Auth.login(data.login.token);*/
+      //Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
-    } 
-
-    // clear form values
-    setFormState({
-      email: "",
-      password: "",
-    });
+    }
   };
 
   return (
     <main>
       <div>
         <div>
-          <h4>Login</h4>
+          <h4>Sign Up</h4>
           <div>
             <form onSubmit={handleFormSubmit}>
+              <input
+                placeholder="Your username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
               <input
                 placeholder="Your email"
                 name="email"
@@ -61,12 +67,12 @@ const Login = (props) => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button>
+              <button type="submit">
                 Submit
               </button>
             </form>
 
-            {error && <div>Login failed</div>}
+            {error && <div>Signup failed</div>}
           </div>
         </div>
       </div>
@@ -74,4 +80,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Signup;
