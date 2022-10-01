@@ -1,13 +1,93 @@
+:root {
+  --color1: rgb(240, 234, 210);
+  --color2: rgb(221, 229, 182);
+  --color3: rgb(173, 193, 120);
+  --color4: rgb(169, 132, 103);
+  --color5: rgb(108, 88, 76);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+  background-image: linear-gradient(
+    var(--color3),
+    var(--color2),
+    var(--color3)
+  );
+}
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.mx-2 {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.modalBackground {
+  background: var(--color5);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.modalContainer {
+  background: var(--color4);
+  border-radius: 5px;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 15px;
+  width: 960px;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.label {
+  color: var(--color1);
+}
+
+.delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.warning-box {
+  background-color: var(--color2);
+  color: red;
+}
+
+.jumbo {
+  width: 80%;
 }
