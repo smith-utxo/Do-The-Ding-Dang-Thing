@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ReviewList = ({ reviews }) => {
   if (!reviews.length) {
@@ -7,15 +7,15 @@ const ReviewList = ({ reviews }) => {
 
   return (
     <div>
-      {reviews && 
-      reviews.map(Review => (
-        <div key={Review._id}>
-          <p>{Review.username}</p>
-          <p>{Review.reviewBody}</p>
-        </div>
-      ))}
+      {reviews &&
+        reviews.map((Review) => (
+          <div key={Review._id}>
+            <p>{Review.username}</p>
+            <p>{Review.reviewBody}</p>
+          </div>
+        ))}
     </div>
-  )
-}
+  );
+};
 
 export default ReviewList;

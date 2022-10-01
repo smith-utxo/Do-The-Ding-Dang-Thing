@@ -1,55 +1,62 @@
-import React, { useState } from 'react';
-import './App.css';
-import ReviewForm from './components/ReviewForm';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import Nav from './components/Navigation';
-import Footer from './components/Footer';
-import Header from './components/Header';
-
-import Login from './components/pages/Login';
-import Categories from './components/Categories';
+import React, { useState } from "react";
+import "./App.css";
+import ReviewForm from "./components/ReviewForm";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import Nav from "./components/Navigation";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+// import ContactForm from './components/ContactForm';
+import Login from "./components/pages/Login";
+import Categories from "./components/Categories";
+import "bulma/css/bulma.min.css";
 
 // Establish a connection to the back-end server's /graphql endpoint
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: "http://localhost:3001/graphql",
 });
-// Use the ApolloClient constructor to instantiate the apollo Client instance and create the connection to the API endpoint. We also instantiate a new cache object using new InMemoryCach(). Note the absolute path to the server. React environment runs at localhost:3000 and the server environment runs at localhost:3001, therefor, if we just used /graphql the requests would go to localhost:3000/graphql which is NOT the correct addres for the back-end server. 
+// Use the ApolloClient constructor to instantiate the apollo Client instance and create the connection to the API endpoint. We also instantiate a new cache object using new InMemoryCach(). Note the absolute path to the server. React environment runs at localhost:3000 and the server environment runs at localhost:3001, therefor, if we just used /graphql the requests would go to localhost:3000/graphql which is NOT the correct addres for the back-end server.
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
 
 function App() {
-
   const [categories] = useState([
     {
-      name: "Home"
+      name: "Home",
     },
     {
-      name: "LawnAndGarden"
+      name: "LawnAndGarden",
     },
     {
-      name: "Plumbing"
+      name: "Plumbing",
     },
     {
-      name: "Cleaning"
+      name: "Cleaning",
     },
     {
-      name: "Electrical"
+      name: "Electrical",
     },
     {
-      name: "Web Development"
+      name: "Web Development",
     },
     {
-      name: "Login/SignUp"
-    }
+      name: "Login/SignUp",
+    },
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [showModal, setShowModal] = useState(false);
+
   // Wrap the return portion in the ApolloProvider Client instance so it can interact with GraphQl
   return (
     <ApolloProvider client={client}>
-      <div className="content">
+      <div className="App content">
         <Header />
         <Nav
           categories={categories}
@@ -58,9 +65,8 @@ function App() {
         ></Nav>
         <main>
           <Categories currentCategory={currentCategory}></Categories>
-
         </main>
-        <Footer></Footer>
+        <Footer showModal={showModal} setShowModal={setShowModal}></Footer>
       </div>
     </ApolloProvider>
   );
