@@ -1,29 +1,32 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import ContactForm from "../ContactForm";
 
-
 const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
 
-  const closeModal = e => {
-    if(modalRef.current === e.target) {
-      setShowModal(false)
-    }
-  }
-  const keyPress = useCallback(e=>{
-    if(e.key==='Escape' && showModal){
+  const closeModal = (e) => {
+    if (modalRef.current === e.target) {
       setShowModal(false);
     }
-  }, [showModal, setShowModal]);
+  };
+  const keyPress = useCallback(
+    (e) => {
+      if (e.key === "Escape" && showModal) {
+        setShowModal(false);
+      }
+    },
+    [showModal, setShowModal]
+  );
 
-  // useEffect(()=>{
-    
-  // })
+  useEffect(() => {
+    document.addEventListener("keydown", keyPress);
+    return () => document.removeEventListener("keydown", keyPress);
+  }, [keyPress]);
 
   return (
     <>
       {showModal ? (
-        <div  className="modalBackdrop">
+        <div ref={modalRef} onClick={closeModal} className="modalBackdrop">
           <div className="modalContainer">
             <h3 className="modalTitle">Contact</h3>
             <ContactForm />
@@ -32,7 +35,9 @@ const Modal = ({ showModal, setShowModal }) => {
             </button>
           </div>
         </div>
-      ) : <p>this does not propogate properly</p>}
+      ) : (
+        <p>this does not propogate properly</p>
+      )}
     </>
   );
 };
