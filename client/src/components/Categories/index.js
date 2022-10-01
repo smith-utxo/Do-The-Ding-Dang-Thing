@@ -5,6 +5,7 @@ import Electrical from "../pages/Electrical";
 import Home from "../pages/Home";
 import LawnAndGarden from "../pages/Lawn&Garden";
 import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 import Plumbing from "../pages/Plumbing";
 import WebDevelopment from "../pages/Web Development";
 
@@ -23,8 +24,10 @@ function Categories({ currentCategory }) {
         return <Electrical />;
       case "Web Development":
         return <WebDevelopment />;
-      case "Login/SignUp":
+      case "Login":
         return <Login />;
+      case "Signup":
+        return <Signup />;
       default:
         return <Home />;
     }
