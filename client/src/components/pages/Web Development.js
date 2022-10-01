@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function WebDevelopment() {
-  return (
-    <div>This is Web Development</div>
-  )
+  return <div>This is Web Development</div>;
 }
 
-export default WebDevelopment
-
+export default WebDevelopment;

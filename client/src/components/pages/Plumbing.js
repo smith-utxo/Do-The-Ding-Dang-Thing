@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Plumbing() {
-  return (
-    <div>This is Plumbing</div>
-  )
+  return <div>This is Plumbing</div>;
 }
 
-export default Plumbing
+export default Plumbing;

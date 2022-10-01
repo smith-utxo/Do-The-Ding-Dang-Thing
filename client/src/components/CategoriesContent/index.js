@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function CategoriesContent(props) {
-  return (
-    <div>
-      {props.children}
-    </div>
-  )
+  return <div>{props.children}</div>;
 }
 
-export default CategoriesContent
+export default CategoriesContent;
