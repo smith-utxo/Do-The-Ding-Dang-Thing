@@ -38,6 +38,7 @@ code {
 .mx-2 {
   margin-right: 5px;
   margin-left: 5px;
+  list-style: none; 
 }
 
 .content {
