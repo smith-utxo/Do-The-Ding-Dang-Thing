@@ -41,7 +41,10 @@ function App() {
       name: "Web Development"
     },
     {
-      name: "Login/SignUp"
+      name: "Login"
+    }, 
+    {
+      name: "Signup"
     }
   ]);
 
