@@ -1,8 +1,9 @@
-const express = require('express');
 const mongoose = require('mongoose');
-const { User , Service, Review} = require('./models');
+const { User , Service, Review} = require('../models');
 
+// db.once is a one-time listener for an event. This listener is invoked only the next time the event is fired, after which it is removed. 
 
+    //per module 18
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/do-the-ding-dang-thing', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -62,6 +63,3 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/do-the-di
   seedDB().then(() => {
     console.log("successfully seeded database!"); 
   })
-
-// Use this to log mongo queries being executed!
-mongoose.set('debug', true);

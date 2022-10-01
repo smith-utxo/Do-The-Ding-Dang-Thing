@@ -26,7 +26,7 @@ const resolvers = {
             return await User.find(params).populate('service');
         },
     },
-
+    
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);

@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const reviewSchema = new Schema(
     {
@@ -16,7 +16,7 @@ const reviewSchema = new Schema(
 
         },
         rating: {
-            type: Int,
+            type: Number,
             minlength: 1,
             maxlength: 5,
             require: true
