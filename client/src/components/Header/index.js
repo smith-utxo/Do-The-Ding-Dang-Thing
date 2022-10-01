@@ -1,9 +1,12 @@
 import React from 'react'
-import logo from '../../assets/logo.PNG'
+import badge from '../../assets/badge.png'
 
 function Header() {
   return (
-    <img src={logo} style={{ width: "25%" }} alt="logo"/>
+    <header className='header'>
+      <img src={badge} alt='badge'/>
+      
+    </header>
   )
 }
 

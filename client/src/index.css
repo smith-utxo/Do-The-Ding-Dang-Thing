@@ -20,6 +20,9 @@ code {
     monospace;
 }
 
+.App{
+  background-image: linear-gradient(var(--color3),var(--color2),var(--color3))
+}
 .flex-row {
   display: flex;
   flex-wrap: wrap;
@@ -79,4 +82,8 @@ code {
 .warning-box{
   background-color: var(--color2);
   color: red;
+}
+
+.jumbo{
+  width:80%;
 }

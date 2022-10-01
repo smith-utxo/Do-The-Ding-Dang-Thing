@@ -53,7 +53,7 @@ function App() {
   // Wrap the return portion in the ApolloProvider Client instance so it can interact with GraphQl
   return (
     <ApolloProvider client={client}>
-      <div className="content">
+      <div className="App content">
         <Header />
         <Nav
           categories={categories}
