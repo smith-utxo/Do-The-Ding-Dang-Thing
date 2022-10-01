@@ -14,6 +14,8 @@ import Header from "./components/Header";
 import Login from "./components/pages/Login";
 import Categories from "./components/Categories";
 import "bulma/css/bulma.min.css";
+import UserCard from "./components/UserCard";
+
 
 // Establish a connection to the back-end server's /graphql endpoint
 const httpLink = createHttpLink({
@@ -61,6 +63,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App content">
         <Header />
+        <UserCard showModal={showModal} setShowModal={setShowModal}/>
         <Nav
           categories={categories}
           currentCategory={currentCategory}
@@ -69,7 +72,7 @@ function App() {
         <main>
           <Categories currentCategory={currentCategory}></Categories>
         </main>
-        <Footer showModal={showModal} setShowModal={setShowModal}></Footer>
+        <Footer ></Footer>
       </div>
     </ApolloProvider>
   );

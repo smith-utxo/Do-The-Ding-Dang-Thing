@@ -10,10 +10,7 @@ function Footer({ showModal, setShowModal }) {
   return (
     <div>
       <h1>This is the Footer!</h1>
-      <button onClick={() => toggleModal()}>modal button</button>
-      {showModal ? (
-        <Modal showModal={showModal} setShowModal={setShowModal} />
-      ) : null}
+      
     </div>
   );
 }
