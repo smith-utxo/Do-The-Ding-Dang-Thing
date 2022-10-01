@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function LawnAndGarden() {
-  return (
-    <div>This is Lawn and Garden!</div>
-  )
+  return <div>This is Lawn and Garden!</div>;
 }
 
-export default LawnAndGarden
+export default LawnAndGarden;

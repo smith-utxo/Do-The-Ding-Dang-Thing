@@ -86,7 +86,9 @@ function ContactForm() {
             <p className="box warning-box">{errorMessage}</p>
           </div>
         )}
-        <button type="submit" className="button is-primary">Submit</button>
+        <button type="submit" className="button is-primary">
+          Submit
+        </button>
       </form>
     </section>
   );
