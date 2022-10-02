@@ -46,7 +46,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
 };
 
 // Call the async function to start the server
-startApolloServer(typeDefs, resolvers);
+
 
 
 // Create an empty array to store User Data
@@ -100,4 +100,5 @@ seedDB().then(() => {
 });
 
 // Use this to log mongo queries being executed!
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
+startApolloServer(typeDefs, resolvers);

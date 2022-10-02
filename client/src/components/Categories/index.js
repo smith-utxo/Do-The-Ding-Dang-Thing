@@ -9,21 +9,21 @@ import Signup from "../pages/Signup";
 import Plumbing from "../pages/Plumbing";
 import WebDevelopment from "../pages/Web Development";
 
-function Categories({ currentCategory }) {
+function Categories({ currentCategory, showModal, setShowModal }) {
   const tabRender = () => {
     switch (currentCategory.name) {
       case "Home":
         return <Home />;
       case "LawnAndGarden":
-        return <LawnAndGarden />;
+        return <LawnAndGarden showModal={showModal} setShowModal={setShowModal}/>;
       case "Plumbing":
-        return <Plumbing />;
+        return <Plumbing showModal={showModal} setShowModal={setShowModal}/>;
       case "Cleaning":
-        return <Cleaning />;
+        return <Cleaning showModal={showModal} setShowModal={setShowModal}/>;
       case "Electrical":
-        return <Electrical />;
+        return <Electrical showModal={showModal} setShowModal={setShowModal}/>;
       case "Web Development":
-        return <WebDevelopment />;
+        return <WebDevelopment showModal={showModal} setShowModal={setShowModal}/>;
       case "Login":
         return <Login />;
       case "Signup":

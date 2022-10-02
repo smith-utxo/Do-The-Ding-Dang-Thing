@@ -47,7 +47,7 @@ function generateData() {
         email: email,
         password: password,
         phone: phone,
-        services: [services],
+        services: services,
       });
     }
 
@@ -60,7 +60,7 @@ function generateData() {
     for (let i = 0; i < 20; i++) {
       let reviewBody = faker.lorem.sentences(2);
       let username = users[Math.floor(Math.random() * users.length)].username;
-      console.log(username);
+      console.log({users});
       let createdAt = faker.date.recent();
       let rating = Math.floor(Math.random() * (5 - 1 + 1) + 1);
 

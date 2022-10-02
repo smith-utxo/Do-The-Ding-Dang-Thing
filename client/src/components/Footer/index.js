@@ -1,17 +1,12 @@
 import React from "react";
-import Modal from "../Modal";
 
-function Footer({ showModal, setShowModal }) {
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-  console.log({ showModal });
-
+function Footer() {
+ 
   return (
-    <div>
-      <h1>This is the Footer!</h1>
+    <footer>
+      <p>&2022; Abby Rosenthal, Adam Smith, Jordan Degerness, Joseph Kurpierz</p>
       
-    </div>
+    </footer>
   );
 }
 

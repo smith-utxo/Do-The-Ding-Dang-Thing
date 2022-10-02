@@ -24,6 +24,7 @@ code {
   background-image: linear-gradient(
     var(--color3),
     var(--color2),
+    var(--color2),
     var(--color3)
   );
 }
@@ -38,7 +39,7 @@ code {
 .mx-2 {
   margin-right: 5px;
   margin-left: 5px;
-  list-style: none; 
+  list-style: none;
 }
 
 .content {
@@ -48,6 +49,7 @@ code {
   flex: 1 0 auto;
 }
 
+/* modal styling */
 .modalBackground {
   background: var(--color5);
   bottom: 0;
@@ -74,14 +76,15 @@ code {
   margin-bottom: 25px;
 }
 
-.label {
-  color: var(--color1);
-}
-
 .delete {
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+/* contact form */
+.label {
+  color: var(--color1);
 }
 
 .warning-box {
@@ -89,6 +92,42 @@ code {
   color: red;
 }
 
+/* home page */
 .jumbo {
   width: 80%;
+}
+
+/* user card */
+.profile-container {
+  background-color: var(--color1);
+  border: 2px solid var(--color5);
+}
+
+.card-content {
+  margin-bottom: 0;
+}
+
+.actions {
+  background-color: var(--color1);
+  border-top: 1px solid var(--color4);
+  margin-top: 5px;
+}
+
+/* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  max-height: 40px;
+  background-color: var(--color3);
+  border-top: 1px double  var(--color4);
+}
+
+
+/* pages */
+.page{
+  margin-bottom: 40px;
 }

@@ -63,14 +63,13 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App content">
         <Header />
-        <UserCard showModal={showModal} setShowModal={setShowModal}/>
         <Nav
           categories={categories}
           currentCategory={currentCategory}
           setCurrentCategory={setCurrentCategory}
         ></Nav>
         <main>
-          <Categories currentCategory={currentCategory}></Categories>
+          <Categories currentCategory={currentCategory} showModal={showModal} setShowModal={setShowModal}></Categories>
         </main>
         <Footer ></Footer>
       </div>
