@@ -15,6 +15,10 @@ const servicesSchema = new Schema(
         reviews: [{
             type: Schema.Types.ObjectId,
             ref: 'Review'
+        }],
+        users: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }]
     },
     //could keep this to track reviews
