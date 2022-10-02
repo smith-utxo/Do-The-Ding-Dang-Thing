@@ -1,4 +1,4 @@
-const { Services, User, Review } = require('../models')
+const { Service, User, Review } = require('../models')
 const { gql } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -14,7 +14,7 @@ const resolvers = {
         },
         //TO DO: use the service id to look for it inside all the user services arrays... the reverse of bonus in project 18 ... use the mongoose $
         services: async () => {
-            return await Services.find();
+            return await Service.find();
         },
         providers: async (parent, { service, user }) => {
             const params = {};
@@ -23,7 +23,7 @@ const resolvers = {
                 params.service = service;
             }
 
-            return await User.find(params).populate('service');
+            return await User.find(params).populate('services');
         },
     },
     

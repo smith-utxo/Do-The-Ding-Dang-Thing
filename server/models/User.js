@@ -1,56 +1,64 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 //to hash the password
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
-    {
-        username: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        email: {
-            type: String,
-            required: true,
-            unique: true,
-            match: [/.+@.+\..+/, 'Must use a valid email address'],
-        },
-        password: {
-            type: String,
-            required: true,
-        },
-        phone: {
-            type: String,
-            match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
-        },
-        //this now is able to hold a review
-        services: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Service'
-        }],
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
     },
-    //set this to use virtuals
-    {
-        toJSON: {
-            virtuals: true,
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, "Must use a valid email address"],
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
+    },
+    //this now is able to hold a review
+    services: [
+      {
+        title: {
+            type: String
         },
-    }
-)
+        description: {
+          type: String,
+          required: true,
+          maxLength: 150,
+        },
+      },
+    ],
+  },
+  //set this to use virtuals
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
 
 // hash user password
-userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-        const saltRounds = 10;
-        this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-    next();
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+  next();
 });
 
 // custom method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compare(password, this.password);
+  return bcrypt.compare(password, this.password);
 };
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;
