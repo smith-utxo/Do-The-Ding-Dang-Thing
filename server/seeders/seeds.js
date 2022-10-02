@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { User , Service, Review} = require('../models');
+const { User, Service, Review } = require('../models');
 
 // db.once is a one-time listener for an event. This listener is invoked only the next time the event is fired, after which it is removed. 
 
@@ -62,4 +62,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/do-the-di
 
   seedDB().then(() => {
     console.log("successfully seeded database!"); 
-  })
+  });
