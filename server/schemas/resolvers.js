@@ -40,7 +40,7 @@ const resolvers = {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      //const token = signToken(user); remember to add TOKEN
+    //  const token = signToken(user, token);
       return { user };
     },
 
