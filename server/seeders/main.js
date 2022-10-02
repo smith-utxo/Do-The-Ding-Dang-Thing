@@ -28,7 +28,7 @@ function generateData() {
     const serviceArray = [
       "Cleaning",
       "Electrical",
-      "Lawn & Garden",
+      "Lawn and Garden",
       "Plumbing",
       "Web Development",
     ];
