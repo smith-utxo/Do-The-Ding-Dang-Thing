@@ -1,4 +1,4 @@
-const { Services, User } = require('../models')
+const { Services, User, Review } = require('../models')
 const { gql } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -30,10 +30,10 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
-            //const token = signToken(user);
+            const token = signToken(user);
 
                 //TO DO: add token back when ready to use
-            return { user };
+            return { user, token };
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
@@ -69,10 +69,18 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
 
-        addService: {
-            // TO DO: have it link to a dropdown with pre-determined job options
-            //then the service goes to the user's array
-
-        }
+        addService: async (parent, { serviceId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    {_id: context.user_id},
+                    {$addToSet: {service: serviceId}},
+                    {new: true}
+                ).populate('service')
+    
+                return updatedUser;
+            }
+    
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
 }
