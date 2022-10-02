@@ -23,6 +23,7 @@ mongoose
   });
 
 function generateData() {
+    // Generate 100 random users that fit the User model
   function generateUsers() {
     const serviceArray = [
       "Cleaning",
@@ -54,7 +55,7 @@ function generateData() {
   }
 
   generateUsers();
-
+  // Generate 20 random reviews that follow made by some of the users just created
   function generateReviews() {
     for (let i = 0; i < 20; i++) {
       let reviewBody = faker.lorem.sentences(2);
@@ -78,8 +79,8 @@ function generateData() {
 }
 
 generateData();
-console.log(users);
-console.log(reviews);
+// console.log(users);
+// console.log(reviews);
 
 const seedDB = async () => {
   await User.deleteMany({});
