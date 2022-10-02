@@ -4,8 +4,9 @@ import UserCard from "../UserCard";
 function Cleaning({ showModal, setShowModal }) {
   return (
     <div className="page">
-      <div>This is Cleaning</div>
-      {/* map out all user cards with corresponding service */}
+      <h2 id="page-title">This is Cleaning</h2>
+      {/* map out all user cards with corresponding service 
+      if user.services = cleaning, then render applicable user card*/}
       <UserCard showModal={showModal} setShowModal={setShowModal} />
     </div>
   );

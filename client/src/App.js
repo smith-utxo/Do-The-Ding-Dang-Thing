@@ -30,10 +30,10 @@ const client = new ApolloClient({
 function App() {
   const [categories] = useState([
     {
-      name: "Home",
+      name: "Web Dev",
     },
     {
-      name: "LawnAndGarden",
+      name: "Lawn&Garden",
     },
     {
       name: "Plumbing",
@@ -45,7 +45,7 @@ function App() {
       name: "Electrical",
     },
     {
-      name: "Web Development",
+      name: "Home",
     },
     {
       name: "Login"

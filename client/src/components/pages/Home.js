@@ -11,13 +11,15 @@ const Home = () => {
   const reviews = data?.reviews || [];
   console.log(reviews);
   return (
-    <main>
-      <jumbotron className="jumbo columns image is-5by3">
+    <main className="page">
+      <jumbotron className="jumbo columns image is-5by3 is-centered">
+        <div className="column is-one-fifth"></div>
         <img
-          className="column is-rounded is-two-fifths is-offset-one-fifth"
+          className="column is-rounded is-three-fifths"
           src={logo}
           alt="logo"
         />
+        <div className="column is-one-fifth"></div>
       </jumbotron>
       <div>
         {loading ? (

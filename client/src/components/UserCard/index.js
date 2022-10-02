@@ -10,8 +10,8 @@ function UserCard({ showModal, setShowModal, reviews }) {
     <div className="profile-container card">
       <div className="box card-content">
         <div className="media">
-          <div className="user-title media-left">
-            <h2>username</h2>
+          <div className="media-left">
+            <h2 className="user-title">username</h2>
           </div>
           <div className="ratings media-content">
             <p>
