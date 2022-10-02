@@ -40,7 +40,7 @@ const Signup = () => {
     <main className='page'>
       <div>
         <div className='sign-up-container'>
-          <h4>Sign Up</h4>
+          <h2 id="page-title">Sign Up</h2>
           <div className='box sign-up-box'>
             <form className='field' onSubmit={handleFormSubmit}>
               <div className='control'>

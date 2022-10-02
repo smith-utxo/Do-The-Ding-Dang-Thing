@@ -12,7 +12,7 @@ const Home = () => {
   console.log(reviews);
   return (
     <main className="page">
-      <jumbotron className="jumbo columns image is-5by3 is-centered">
+      <div className="jumbo columns image is-5by3 is-centered">
         <div className="column is-one-fifth"></div>
         <img
           className="column is-rounded is-three-fifths"
@@ -20,7 +20,7 @@ const Home = () => {
           alt="logo"
         />
         <div className="column is-one-fifth"></div>
-      </jumbotron>
+      </div>
       <div>
         {loading ? (
           <div>Loading...</div>

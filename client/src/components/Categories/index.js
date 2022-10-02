@@ -14,7 +14,7 @@ function Categories({ currentCategory, showModal, setShowModal }) {
     switch (currentCategory.name) {
       case "Home":
         return <Home />;
-      case "LawnAndGarden":
+      case "Garden":
         return <LawnAndGarden showModal={showModal} setShowModal={setShowModal}/>;
       case "Plumbing":
         return <Plumbing showModal={showModal} setShowModal={setShowModal}/>;
@@ -22,7 +22,7 @@ function Categories({ currentCategory, showModal, setShowModal }) {
         return <Cleaning showModal={showModal} setShowModal={setShowModal}/>;
       case "Electrical":
         return <Electrical showModal={showModal} setShowModal={setShowModal}/>;
-      case "Web Development":
+      case "Web Dev":
         return <WebDevelopment showModal={showModal} setShowModal={setShowModal}/>;
       case "Login":
         return <Login />;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import ReviewForm from "./components/ReviewForm";
+// import ReviewForm from "./components/ReviewForm";
 import {
   ApolloProvider,
   ApolloClient,
@@ -10,11 +10,8 @@ import {
 import Nav from "./components/Navigation";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-// import ContactForm from './components/ContactForm';
-import Login from "./components/pages/Login";
 import Categories from "./components/Categories";
 import "bulma/css/bulma.min.css";
-import UserCard from "./components/UserCard";
 
 
 // Establish a connection to the back-end server's /graphql endpoint
@@ -33,7 +30,7 @@ function App() {
       name: "Web Dev",
     },
     {
-      name: "Lawn&Garden",
+      name: "Garden",
     },
     {
       name: "Plumbing",
@@ -55,13 +52,13 @@ function App() {
     }
   ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [currentCategory, setCurrentCategory] = useState(categories[5]);
   const [showModal, setShowModal] = useState(false);
 
   // Wrap the return portion in the ApolloProvider Client instance so it can interact with GraphQl
   return (
     <ApolloProvider client={client}>
-      <div className="App content">
+      <div className="App">
         <Header />
         <Nav
           categories={categories}
