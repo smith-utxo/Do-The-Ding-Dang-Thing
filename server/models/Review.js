@@ -1,4 +1,4 @@
-const { Schema, model } =require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const reviewSchema = new Schema(
     {
@@ -12,7 +12,7 @@ const reviewSchema = new Schema(
             type: String,
             required: true
         },
-        createAt: {
+        createdAt: {
 
         },
         rating: {
