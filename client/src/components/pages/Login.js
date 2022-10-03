@@ -39,10 +39,10 @@ const Login = (props) => {
   };
 
   return (
-    <main>
+    <main className='page'>
       <div>
         <div>
-          <h4>Login</h4>
+          <h2 id="page-title">Login</h2>
           <div>
             <form onSubmit={handleFormSubmit}>
               <input

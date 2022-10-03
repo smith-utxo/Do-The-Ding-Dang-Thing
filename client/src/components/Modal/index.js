@@ -33,9 +33,7 @@ const Modal = ({ showModal, setShowModal }) => {
               onClick={() => setShowModal(!showModal)}
               type="button"
               className="delete"
-            >
-              Close this modal
-            </button>
+            ></button>
           </div>
         </div>
       ) : null}
