@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../../utils/mutations';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../../utils/mutations";
 
+import Auth from '../../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
   const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -31,6 +32,7 @@ const Signup = () => {
       });
 
       //Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -67,9 +69,7 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button type="submit">
-                Submit
-              </button>
+              <button type="submit">Submit</button>
             </form>
 
             {error && <div>Signup failed</div>}
