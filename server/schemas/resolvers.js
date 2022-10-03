@@ -1,5 +1,5 @@
 const { Service, User, Review } = require("../models");
-const { gql, AuthenticationError } = require("apollo-server-express");
+const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
