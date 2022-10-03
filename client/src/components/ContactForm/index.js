@@ -37,6 +37,7 @@ function ContactForm() {
     e.preventDefault();
     console.log(formState);
   }
+  
   return (
     <section>
       <h1>Get help</h1>
@@ -86,7 +87,7 @@ function ContactForm() {
             <p className="box warning-box">{errorMessage}</p>
           </div>
         )}
-        <button type="submit" className="button is-primary">
+        <button type="submit" className="button is-primary" onClick={handleSubmit}>
           Submit
         </button>
       </form>

@@ -1,5 +1,5 @@
 const { Service, User, Review } = require('../models')
-const { gql } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -16,12 +16,12 @@ const resolvers = {
         services: async () => {
             return await Service.find();
         },
-        providers: async (parent, { service, user }) => {
-            const params = {};
+        // providers: async (parent, { service, user }) => {
+        //     const params = {};
 
-            if (service) {
-                params.service = service;
-            }
+        //     if (service) {
+        //         params.service = service;
+        //     }
 
             return await User.find(params).populate('services');
         },
@@ -31,25 +31,23 @@ const resolvers = {
         addUser: async (parent, args) => {
             const user = await User.create(args);
             const token = signToken(user);
-
                 //TO DO: add token back when ready to use
-            return { user, token };
+            return { token, user };
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
-
             if (!user) {
-                throw new AuthenticationError('Incorrect credentials');
+                throw new AuthenticationError('Incorrect user');
             }
 
             const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
-                throw new AuthenticationError('Incorrect credentials');
+                throw new AuthenticationError('Incorrect password');
             }
 
-            //const token = signToken(user);
-            //return { token, user };
+            const token = signToken(user);
+            return { token, user };
         },
 
         //TO DO: This needs to be fixed to send service id to args
