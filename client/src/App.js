@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import ReviewForm from "./components/ReviewForm";
+// import ReviewForm from "./components/ReviewForm";
 import {
   ApolloProvider,
   ApolloClient,
@@ -10,10 +10,9 @@ import {
 import Nav from "./components/Navigation";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-// import ContactForm from './components/ContactForm';
-import Login from "./components/pages/Login";
 import Categories from "./components/Categories";
 import "bulma/css/bulma.min.css";
+
 
 // Establish a connection to the back-end server's /graphql endpoint
 const httpLink = createHttpLink({
@@ -28,10 +27,10 @@ const client = new ApolloClient({
 function App() {
   const [categories] = useState([
     {
-      name: "Home",
+      name: "Web Dev",
     },
     {
-      name: "LawnAndGarden",
+      name: "Garden",
     },
     {
       name: "Plumbing",
@@ -43,7 +42,7 @@ function App() {
       name: "Electrical",
     },
     {
-      name: "Web Development",
+      name: "Home",
     },
     {
       name: "Login"
@@ -53,13 +52,13 @@ function App() {
     }
   ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [currentCategory, setCurrentCategory] = useState(categories[5]);
   const [showModal, setShowModal] = useState(false);
 
   // Wrap the return portion in the ApolloProvider Client instance so it can interact with GraphQl
   return (
     <ApolloProvider client={client}>
-      <div className="App content">
+      <div className="App">
         <Header />
         <Nav
           categories={categories}
@@ -67,9 +66,9 @@ function App() {
           setCurrentCategory={setCurrentCategory}
         ></Nav>
         <main>
-          <Categories currentCategory={currentCategory}></Categories>
+          <Categories currentCategory={currentCategory} showModal={showModal} setShowModal={setShowModal}></Categories>
         </main>
-        <Footer showModal={showModal} setShowModal={setShowModal}></Footer>
+        <Footer ></Footer>
       </div>
     </ApolloProvider>
   );
