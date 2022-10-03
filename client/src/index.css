@@ -1,9 +1,9 @@
 :root {
-  --color1: rgb(240, 234, 210);
-  --color2: rgb(221, 229, 182);
-  --color3: rgb(173, 193, 120);
-  --color4: rgb(169, 132, 103);
-  --color5: rgb(108, 88, 76);
+  --color1: rgb(25,83,95);
+  --color2: rgb(11,122,117);
+  --color3: rgb(215,201,170);
+  --color4: rgb(123,45,38);
+  --color5: rgb(240,243,245);
 }
 
 body {
@@ -24,43 +24,26 @@ code {
   background-image: linear-gradient(
     var(--color3),
     var(--color2),
+    var(--color2),
     var(--color3)
   );
 }
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style: none;
-}
 
-.mx-2 {
-  margin-right: 5px;
-  margin-left: 5px;
-  list-style: none; 
-}
 
-.content {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  flex: 1 0 auto;
-}
-
+/* modal styling */
 .modalBackground {
-  background: var(--color5);
+  background: var(--color1);
   bottom: 0;
   left: 0;
   overflow: auto;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .modalContainer {
-  background: var(--color4);
+  background: var(--color2);
   border-radius: 5px;
   max-width: 100%;
   margin: 50px auto;
@@ -74,14 +57,15 @@ code {
   margin-bottom: 25px;
 }
 
-.label {
-  color: var(--color1);
-}
-
 .delete {
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+/* contact form */
+.label {
+  color: var(--color5);
 }
 
 .warning-box {
@@ -89,6 +73,85 @@ code {
   color: red;
 }
 
-.jumbo {
+/* home page */
+jumbotron {
   width: 80%;
 }
+
+/* user card */
+.profile-container {
+  background-color: var(--color3);
+  border: 2px solid var(--color4);
+}
+
+.card-content {
+  margin-bottom: 0;
+}
+
+.user-title{
+  color: var(--color5);
+  font-size: x-small;
+}
+
+
+/* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  max-height: 40px;
+  background-color: var(--color3);
+  border-top: 3mm ridge var(--color4);
+}
+
+
+/* pages */
+.page{
+  margin-bottom: 40px;
+}
+
+#page-title{
+  color: var(--color3);
+  font-weight: 900;
+}
+
+/* signup form */
+.sign-up-container{
+  align-content: center;
+  width: 100%;
+}
+.sign-up-box{
+  width:70%;
+  /* background-color: var(--color1); */
+  background-image: radial-gradient( var(--color1),var(--color4),var(--color2),var(--color1));
+}
+
+.card {
+  background-color: #fff;
+  width: 70%; 
+  color: #333;
+  border-radius: 15px;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative;
+  left: 20%; 
+}
+
+/* Nav bar */
+/* .navbar{
+  background-image: linear-gradient(var(--color3),var(--color2),var(--color3));
+  z-index: 1;
+}
+
+.nav-btn{
+  border:none;
+  width:100%;
+}
+
+.navbar-dropdown,
+.nav-btn{
+  background-color: var(--color5);
+} */

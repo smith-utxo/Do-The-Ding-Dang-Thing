@@ -1,7 +1,7 @@
 const { model, Schema } = require('mongoose');
 
 
-const servicesSchema = new Schema(
+const serviceSchema = new Schema(
 
     {
         //create and array because they may do more than one job.
@@ -30,6 +30,6 @@ const servicesSchema = new Schema(
     }
 );
 
-const Service = model('Service', servicesSchema);
-
+const Service = model('Service', serviceSchema);
+ 
 module.exports = Service;

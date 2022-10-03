@@ -39,13 +39,15 @@ const Signup = () => {
   };
 
   return (
-    <main>
+    <main className='page'>
       <div>
-        <div>
-          <h4>Sign Up</h4>
-          <div>
-            <form onSubmit={handleFormSubmit}>
+        <div className='sign-up-container'>
+          <h2 id="page-title">Sign Up</h2>
+          <div className='box sign-up-box'>
+            <form className='field' onSubmit={handleFormSubmit}>
+              <div className='control'>
               <input
+              className='input'
                 placeholder="Your username"
                 name="username"
                 type="username"
@@ -53,7 +55,10 @@ const Signup = () => {
                 value={formState.username}
                 onChange={handleChange}
               />
+              </div>
+              <div className='control'>
               <input
+              className='input'
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -61,7 +66,10 @@ const Signup = () => {
                 value={formState.email}
                 onChange={handleChange}
               />
+              </div>
+              <div className='control'>
               <input
+              className='input'
                 placeholder="******"
                 name="password"
                 type="password"
@@ -69,7 +77,10 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button type="submit">Submit</button>
+              </div>
+              <button className='button is-primary' type="submit">
+                Submit
+              </button>
             </form>
 
             {error && <div>Signup failed</div>}
