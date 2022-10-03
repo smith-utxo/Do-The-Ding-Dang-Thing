@@ -1,5 +1,5 @@
 const { Service, User, Review } = require('../models')
-const { gql } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -12,18 +12,21 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
-        //TO DO: use the service id to look for it inside all the user services arrays... the reverse of bonus in project 18 ... use the mongoose $
+        // Get a single user and list their services
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+                .select('-__v -password')
+                .populate('services');
+        },
+        // Get all services, used for seeding database
         services: async () => {
             return await Service.find();
         },
-        providers: async (parent, { service, user }) => {
-            const params = {};
-
-            if (service) {
-                params.service = service;
-            }
-
-            return await User.find(params).populate('services');
+        // Get one service and list its users and reviews
+        providers: async (parent, { _id }) => {
+            return await Service.findOne({ _id })
+            .populate('users')
+            .populate('reviews');
         },
     },
     
@@ -73,9 +76,9 @@ const resolvers = {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     {_id: context.user_id},
-                    {$addToSet: {service: serviceId}},
+                    {$addToSet: {services: serviceId}},
                     {new: true}
-                ).populate('service')
+                ).populate('services');
     
                 return updatedUser;
             }
