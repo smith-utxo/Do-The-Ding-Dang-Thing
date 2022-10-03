@@ -23,8 +23,8 @@ const resolvers = {
         //         params.service = service;
         //     }
 
-        //     return await User.find(params).populate('service');
-        // },
+            return await User.find(params).populate('services');
+        },
     },
     
     Mutation: {

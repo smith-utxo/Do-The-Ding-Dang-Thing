@@ -1,7 +1,8 @@
 const { faker } = require("@faker-js/faker");
 const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 // const fs = require('fs');
-const { User, Review } = require("../models");
+const { User, Review, Service } = require("../models");
 let users = [];
 let reviews = [];
 
@@ -26,15 +27,39 @@ function generateData() {
     // Generate 100 random users that fit the User model
   function generateUsers() {
     const serviceArray = [
-      "Cleaning",
-      "Electrical",
-      "Lawn and Garden",
-      "Plumbing",
-      "Web Development",
+      {
+        title: "Cleaning",
+        description: "Houses, stores, cars... whatever's dirty, someone out there can clean it for you."
+      },
+      {
+        title: "Electrical",
+        description: "One of these skilled electricians might spark your interest!"
+      },
+      {
+        title: "Lawn and Garden",
+        description: "These green-thumbed gurus keep the great outdoors looking great!"
+      },
+      {
+        title: "Plumbing",
+        description: "These pipemasters will help you achieve a state of flow again."
+      },
+      {
+        title: "Web Development",
+        description: "Taking your business global? They're here to help."
+      },
     ];
+
+    const seedServiceDB = async () => {
+      await Service.deleteMany({});
+      await Service.insertMany(serviceArray);
+    };
+    seedServiceDB().then(() => {
+      console.log("Successfully seeded services!");
+    });
+
     for (let i = 0; i < 50; i++) {
       let username = faker.internet.userName();
-      let email = faker.internet.email();
+      let email = faker.internet.email(`${username}`);
       let password = faker.internet.password(12);
       let phone = faker.phone.number("###-###-####");
       let services =
@@ -50,7 +75,7 @@ function generateData() {
         services: services,
       });
     }
-
+    console.log(users);
     return users;
   }
 
@@ -60,7 +85,6 @@ function generateData() {
     for (let i = 0; i < 20; i++) {
       let reviewBody = faker.lorem.sentences(2);
       let username = users[Math.floor(Math.random() * users.length)].username;
-      console.log({users});
       let createdAt = faker.date.recent();
       let rating = Math.floor(Math.random() * (5 - 1 + 1) + 1);
 
@@ -90,6 +114,6 @@ const seedDB = async () => {
 };
 
 seedDB().then(() => {
-  console.log("successfully seeded database!");
+  console.log("Successfully seeded database!");
 });
 // fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
