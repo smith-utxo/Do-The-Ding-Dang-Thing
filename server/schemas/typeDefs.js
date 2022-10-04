@@ -47,6 +47,8 @@ type Query {
     me: User
     services(title: String): [Review]
     reviews(_id:ID): [Review]
+    user(username: String!): User
+    providers(_id: ID!): [User]
 }
 
 type Mutation {
