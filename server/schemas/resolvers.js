@@ -12,9 +12,23 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
-        
-        services: async (parent, {_id}) => {
-            return await User.find();
+
+        // Get a single user and list their services
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+                .select('-__v -password')
+                .populate('services')
+                .populate('reviews');
+        },
+        // Get all services, used for seeding database
+        services: async () => {
+            return await Service.find();
+        },
+        // Get one service and list its users and reviews
+        providers: async (parent, { _id }) => {
+            return await Service.findOne({ _id })
+            .populate('users')
+            .populate('reviews');
         },
     },
     
@@ -56,24 +70,6 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-    }
 };
 
 module.exports = resolvers;
-
-
-//WE DON'T NEED THIS SINCE WE HARD CODED 5 SERVICES IN - future development 
-
-// addService: async (parent, { serviceId }, context) => {
-//     if (context.user) {
-//         const updatedUser = await User.findOneAndUpdate(
-//             {_id: context.user_id},
-//             {$addToSet: {service: serviceId}},
-//             {new: true}
-//         ).populate('service')
-
-//         return updatedUser;
-//     }
-
-//     throw new AuthenticationError('You need to be logged in!');
-// },

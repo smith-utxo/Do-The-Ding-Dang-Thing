@@ -45,7 +45,9 @@ input ReviewInput {
 
 type Query {
     me: User
-    services(_id: ID): [User]
+    user(username: String!): User
+    services: [Service]
+    providers(_id: ID!): [User]
 }
 
 type Mutation {
