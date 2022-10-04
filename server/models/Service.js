@@ -13,14 +13,6 @@ const serviceSchema = new Schema(
             required: true,
             maxLength: 150
         },
-        reviews: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Review'
-        }],
-        users: [{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }]
     },
     //could keep this to track reviews
     {
