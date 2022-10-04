@@ -13,7 +13,7 @@ module.exports = {
         if (req.headers.authorization) {
             token = token
             // MIGHT NEED TO ADD BACK AFTER MORE TROUBLESHOOTING!!!
-             .split('')
+             .split(' ')
              .pop()
              .trim();
         }
