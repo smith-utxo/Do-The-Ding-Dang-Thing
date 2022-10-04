@@ -108,7 +108,7 @@ const userData = [
     email: "Andre11_Murazik@hotmail.com",
     password: "GQHzZwDKfJsy",
     phone: "189-087-2485",
-    services: undefined,
+    services: { _id: "633c5cade9b7d911e4bcc214" },
   },
   {
     username: "Arne.Collins98",
