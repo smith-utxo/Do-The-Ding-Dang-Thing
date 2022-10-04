@@ -12,10 +12,9 @@ module.exports = {
         //seperate "Bearer from" <tokenvalue>
         if (req.headers.authorization) {
             token = token
-            // MIGHT NEED TO ADD BACK AFTER MORE TROUBLESHOOTING!!!
-             .split(' ')
-             .pop()
-             .trim();
+            .split(' ')
+            .pop()
+            .trim();
         }
         
         //if no token, return request object as is
