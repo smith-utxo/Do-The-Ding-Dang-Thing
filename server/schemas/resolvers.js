@@ -16,7 +16,8 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
-                .populate('services');
+                .populate('services')
+                .populate('reviews');
         },
         // Get all services, used for seeding database
         services: async () => {
