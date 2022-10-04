@@ -12,9 +12,13 @@ const reviewSchema = new Schema(
             type: String,
             required: true
         },
+        //TO DO: 
         createdAt: {
+            type: Date,
+            default: Date.now,
+            //get: timestamp => dateFormat(timestamp)
+          },
 
-        },
         rating: {
             type: Number,
             minlength: 1,
