@@ -23,7 +23,6 @@ const userSchema = new Schema(
       type: String,
       match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
     },
-    //this now is able to hold a review
     services: [
       {
         type: Schema.Types.ObjectId,
