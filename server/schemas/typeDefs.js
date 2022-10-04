@@ -45,8 +45,9 @@ input ReviewInput {
 
 type Query {
     me: User
+    services(title: String): [Review]
+    reviews(_id:ID): [Review]
     user(username: String!): User
-    services: [Service]
     providers(_id: ID!): [User]
 }
 

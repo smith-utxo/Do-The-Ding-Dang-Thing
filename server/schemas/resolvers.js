@@ -30,6 +30,9 @@ const resolvers = {
             .populate('users')
             .populate('reviews');
         },
+        reviews: async () => {
+          return await Review.find();
+        }, 
     },
     
     Mutation: {
@@ -70,6 +73,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+      }
 };
 
 module.exports = resolvers;

@@ -129,6 +129,17 @@ footer {
   background-image: radial-gradient( var(--color1),var(--color4),var(--color2),var(--color1));
 }
 
+.card {
+  background-color: #fff;
+  width: 70%; 
+  color: #333;
+  border-radius: 15px;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative;
+  left: 20%; 
+}
+
 /* Nav bar */
 /* .navbar{
   background-image: linear-gradient(var(--color3),var(--color2),var(--color3));
