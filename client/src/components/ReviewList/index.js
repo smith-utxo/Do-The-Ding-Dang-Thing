@@ -8,10 +8,10 @@ const ReviewList = ({ reviews }) => {
   return (
     <div>
       {reviews &&
-        reviews.map((Review) => (
-          <div key={Review._id}>
-            <p>{Review.username}</p>
-            <p>{Review.reviewBody}</p>
+        reviews.slice(0,10).map((Review) => (
+          <div key={Review._id} className="card">
+            <p><b>Username</b>: {Review.username}</p>
+            <p><b>Review</b>: {Review.reviewBody}</p>
           </div>
         ))}
     </div>

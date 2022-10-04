@@ -32,6 +32,9 @@ const resolvers = {
             return await Service.find({ _id })
             .populate('users');
         },
+        reviews: async () => {
+          return await Review.find();
+        }, 
     },
     
     Mutation: {
@@ -73,6 +76,7 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
     },
+
 };
 
 module.exports = resolvers;
