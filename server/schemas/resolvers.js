@@ -12,7 +12,10 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
-
+        // Get all users
+        users: async () => {
+            return await User.find();
+        },
         // Get a single user and list their services
         user: async (parent, { username }) => {
             return User.findOne({ username })
@@ -26,9 +29,8 @@ const resolvers = {
         },
         // Get one service and list its users and reviews
         providers: async (parent, { _id }) => {
-            return await Service.findOne({ _id })
-            .populate('users')
-            .populate('reviews');
+            return await Service.find({ _id })
+            .populate('users');
         },
     },
     
@@ -70,6 +72,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
+    },
 };
 
 module.exports = resolvers;
