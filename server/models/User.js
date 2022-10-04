@@ -26,14 +26,15 @@ const userSchema = new Schema(
     //this now is able to hold a review
     services: [
       {
-        title: {
-            type: String
-        },
-        description: {
-          type: String,
-          required: true,
-          maxLength: 150,
-        },
+        type: Schema.Types.ObjectId,
+        ref: "service",
+      },
+    ],
+    //this makes it possible to query someones reviews based on their services ... future dev
+    reviews: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "review",
       },
     ],
   },
