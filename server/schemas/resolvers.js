@@ -30,6 +30,9 @@ const resolvers = {
             .populate('users')
             .populate('reviews');
         },
+        reviews: async () => {
+          return await Review.find();
+        }, 
     },
     
     Mutation: {
