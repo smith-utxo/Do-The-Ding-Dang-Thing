@@ -17,6 +17,7 @@
   - [Questions](#Questions)
   
   ## Description
+  ![landing page](/public/Landing-Page.png)
   Do the Ding Dang Thing is an app that is used for making that connection to somebody or somebodies to lend their skills to Do the Ding Dang Thing.  Whatever curveballs that life has thrown your way, there is someone local to you that can help you out....and by help, ummm, I mean uhhh, you gotta pay them for their services. But at least you don't have to do it!  Honey-do list....get outta here. Not enough time in the day, or energy to keep up? Don't worry about it, just find someone to Do the Ding Dang Thing!
 
   ## Installation
@@ -25,7 +26,9 @@
   ## Usage
   [github repository](https://github.com/smith-utxo/do-the-ding-dang-thing)
 
-  [live website]()
+  [live website on heroku](https://guarded-taiga-92417.herokuapp.com/)
+
+  
 
    When using Do the Ding Dang Thing, you will be able to choose from several different categories of services.  Each service will populate a list of local service providers whom are waiting to hear from you so that they can get to work and Do the Ding Dang Thing!  Once A provider is found, you can read what other users have left for reviews, view the provider's overall rating, and/or contact them for help with your project.  
 
@@ -39,7 +42,7 @@
 
   ## Sources
   `favicon` Hammer icon by Icon8 https://icons8.com/icons/set/hammer
-  
+
   `badges` https://ileriayo.github.io/markdown-badges/
   
   ## License 
@@ -53,8 +56,8 @@
   ## Questions
 
   Any questions can be directed towards 
-  - Adam Smith at [github profile](https://github.com/smith-utxo)
-  - Abby Rosenthal at [github profile](https://github.com/AbbyRosenthal)
-  - Jordan Degerness at [github profile](https://github.com/jdegern4)
-  - Joseph Kurpierz at [github profile](https://github.com/josephkurpierz/)
+  - Adam Smith through his [github profile](https://github.com/smith-utxo)
+  - Abby Rosenthal through her [github profile](https://github.com/AbbyRosenthal)
+  - Jordan Degerness through his [github profile](https://github.com/jdegern4)
+  - Joseph Kurpierz through his [github profile](https://github.com/josephkurpierz/)
   
