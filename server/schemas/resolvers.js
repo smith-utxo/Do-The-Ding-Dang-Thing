@@ -28,8 +28,8 @@ const resolvers = {
             return await Service.find();
         },
         // Get one service and list its users and reviews
-        providers: async (parent, { _id }) => {
-            return await User.find({ _id })
+        providers: async (parent, { services }) => {
+            return await User.find({services})
             .populate('users');
         },
         reviews: async () => {

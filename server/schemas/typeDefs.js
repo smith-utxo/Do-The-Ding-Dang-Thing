@@ -49,7 +49,7 @@ type Query {
     services(title: String): [Review]
     reviews(_id:ID): [Review]
     user(username: String!): User
-    providers(_id: ID!): [User]
+    providers(services: ID): [User]
 }
 
 type Mutation {
