@@ -8,8 +8,8 @@ function Nav(props) {
       <div className="">
         <div className="columns is-gapless is-multiline is-mobile is-centered">
         {categories.map((Category) => (
-          <li className="column is-one-fifth" key={Category.name} onClick={() => setCurrentCategory(Category)}>
-            <button className="" >{Category.name}</button>
+          <li className="column is-one-fifth" key={Category.name} >
+            <button className="nav-button button is-small is-outlined" onClick={() => setCurrentCategory(Category)}>{Category.name}</button>
           </li>
         ))}
         </div>
@@ -17,6 +17,7 @@ function Nav(props) {
 
       
     </nav>
+    
   );
 }
 
