@@ -1,10 +1,9 @@
 import React from "react";
-import badge from "../../assets/badge.png";
 
 function Header() {
   return (
     <header className="header">
-      <img src={badge} alt="badge" />
+      <h1 className='title'>Do The Ding Dang Thing</h1>
     </header>
   );
 }
