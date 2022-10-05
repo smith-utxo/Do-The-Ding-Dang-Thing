@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_REVIEW } from "../../utils/queries";
 import ReviewList from "../ReviewList/index";
-import logo from "../assets/logo.png";
+import logo from "../../../public/logo.png";
 // the loading property comes with apollo and indicates that the request isn't done just yet. When the request completes, the information is stored in the destructured data property
 
 const Home = () => {
