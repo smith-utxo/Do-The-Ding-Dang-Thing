@@ -72,7 +72,7 @@ function generateData() {
         email: email,
         password: password,
         phone: phone,
-        services: services,
+        // services: services,
       });
     }
     console.log(users);
@@ -95,7 +95,7 @@ function generateData() {
         rating: rating,
       });
     }
-
+    console.log(reviews);
     return reviews;
   }
 
