@@ -4,7 +4,7 @@ function Footer() {
  
   return (
     <footer>
-      <p>&2022; Abby Rosenthal, Adam Smith, Jordan Degerness, Joseph Kurpierz</p>
+      <p>&copy;2022 Abby Rosenthal, Adam Smith, Jordan Degerness, Joseph Kurpierz</p>
       
     </footer>
   );

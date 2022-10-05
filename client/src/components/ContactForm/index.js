@@ -40,7 +40,7 @@ function ContactForm() {
   
   return (
     <section>
-      <h1>Get help</h1>
+      <h1 id='page-title'>Get help</h1>
       <form id="contact-form" onSubmit={handleSubmit}>
         <div className="field">
           <label className="label" htmlFor="name">
@@ -84,7 +84,7 @@ function ContactForm() {
         </div>
         {errorMessage && (
           <div>
-            <p className="box warning-box">{errorMessage}</p>
+            <p className="error-msg">{errorMessage}</p>
           </div>
         )}
         <button type="submit" className="button is-primary" onClick={handleSubmit}>
