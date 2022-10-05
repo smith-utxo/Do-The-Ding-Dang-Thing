@@ -46,21 +46,19 @@ input ReviewInput {
 type Query {
     me: User
     users: [User]
-    services(title: String): [Review]
+    services(title: String): [Service]
     reviews(_id:ID): [Review]
     user(username: String!): User
-    providers(_id: ID!): [User]
+    providers(title: String): Service
 }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addReview(reviewData: ReviewInput): User 
-    addService(serviceData: ServiceInput): User
+    addService(userId: ID!, serviceId: ID!): User
+    addProvider(serviceId: ID!, userId: ID!): Service
 }
 `;
 
 module.exports = typeDefs;
-
-//  providers(): [User]
-//taken from Query

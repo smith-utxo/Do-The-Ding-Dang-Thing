@@ -26,14 +26,14 @@ const userSchema = new Schema(
     services: [
       {
         type: Schema.Types.ObjectId,
-        ref: "service",
+        ref: "Service",
       },
     ],
     //this makes it possible to query someones reviews based on their services ... future dev
     reviews: [
       {
         type: Schema.Types.ObjectId,
-        ref: "review",
+        ref: "Review",
       },
     ],
   },
