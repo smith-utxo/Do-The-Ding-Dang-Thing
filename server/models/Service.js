@@ -1,27 +1,31 @@
-const { model, Schema } = require('mongoose');
-
+const { model, Schema } = require("mongoose");
 
 const serviceSchema = new Schema(
-
-    {
-        //create and array because they may do more than one job.
-        title:{
-            type: String
-        },
-        description: {
-            type: String,
-            required: true,
-            maxLength: 150
-        },
+  {
+    //create and array because they may do more than one job.
+    title: {
+      type: String,
     },
-    //could keep this to track reviews
-    {
-        toJSON: {
-            virtuals: true,
-        },
-    }
+    description: {
+      type: String,
+      required: true,
+      maxLength: 150,
+    },
+    users: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+  },
+  //could keep this to track reviews
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
-const Service = model('Service', serviceSchema);
- 
+const Service = model("Service", serviceSchema);
+
 module.exports = Service;
