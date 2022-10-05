@@ -95,7 +95,7 @@ function generateData() {
         rating: rating,
       });
     }
-
+    console.log(reviews);
     return reviews;
   }
 

@@ -23,9 +23,13 @@ const Home = () => {
        
       </div>
       <div>
+      <h1 className="recentReviews">Recent Reviews!</h1>
+      </div>
+      <div>
         {loading ? (
           <div>Loading...</div>
         ) : (
+          
           <ReviewList reviews={reviews} title="Some Feed for Review(s)..." />
         )}
       </div>
