@@ -39,6 +39,7 @@
 
   ## Sources
   `favicon` Hammer icon by Icon8 https://icons8.com/icons/set/hammer
+  
   `badges` https://ileriayo.github.io/markdown-badges/
   
   ## License 
