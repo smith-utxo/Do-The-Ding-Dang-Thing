@@ -11,10 +11,10 @@ function UserCard({ showModal, setShowModal, reviews }) {
       <div className="box card-content">
         <div className="media">
           <div className="media-left">
-            <h2 className="user-title">Display username of user providing service here</h2>
+            <h2 className="user-title"></h2>
           </div>
           <div className="ratings media-content">
-            <p>Display user ratings here</p>
+            <p></p>
             <button className="button is-primary" onClick={() => toggleModal()}>
               Contact
             </button>

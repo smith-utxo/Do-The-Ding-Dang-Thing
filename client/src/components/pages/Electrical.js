@@ -4,7 +4,7 @@ import UserCard from "../UserCard";
 function Electrical({ showModal, setShowModal }) {
   return (
     <div className="page">
-      <h2 id="page-title">This is Electrical</h2>
+      <h2 id="page-title">A list of Electricians!</h2>
       {/* map out all user cards with corresponding service */}
       <UserCard showModal={showModal} setShowModal={setShowModal} />
     </div>

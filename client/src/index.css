@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Peralta&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Peralta&family=Permanent+Marker&display=swap");
 
 :root {
-  --color1: rgb(25,83,95);
-  --color2: rgb(11,122,117);
-  --color3: rgb(215,201,170);
-  --color4: rgb(123,45,38);
-  --color5: rgb(240,243,245);
+  --color1: rgb(25, 83, 95);
+  --color2: rgb(11, 122, 117);
+  --color3: rgb(215, 201, 170);
+  --color4: rgb(123, 45, 38);
+  --color5: rgb(240, 243, 245);
 }
 
 body {
@@ -30,14 +30,14 @@ code {
     var(--color3)
   );
   min-height: 100vh;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-.title{
-  font-family: 'Permanent Marker', cursive;
-  color: var(--color4)
+.title {
+  font-family: "Permanent Marker", cursive;
+  color: var(--color4);
 }
-.error-msg{
+.error-msg {
   color: red;
   font-weight: 600;
 }
@@ -90,14 +90,13 @@ code {
 .logo {
   max-height: 400px;
   margin-top: 1rem;
-  padding: 0,25rem;
+  padding: 0, 25rem;
 }
-.jumbo{
-  margin-top:1rem;
+.jumbo {
+  margin-top: 1rem;
   padding-left: 15vw;
   padding-right: 15vw;
 }
-
 
 /* user card */
 .profile-container {
@@ -109,18 +108,17 @@ code {
   margin-bottom: 0;
 }
 
-.user-title{
+.user-title {
   color: var(--color4);
   font-size: large;
 }
-
 
 /* footer */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  font-family: 'Peralta', cursive;
+  font-family: "Peralta", cursive;
   font-size: 10px;
   width: 100%;
   text-align: center;
@@ -129,31 +127,39 @@ footer {
   border-top: 3mm ridge var(--color4);
 }
 
-
 /* pages */
-.page{
+.page {
   margin-bottom: 40px;
 }
 
-#page-title{
+#page-title {
+  margin-top: 20px;
+  margin-bottom: 25px; 
   color: var(--color3);
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
+  font-size: 2em;
 }
 
 /* signup form */
-.sign-up-container{
+.sign-up-container {
   align-content: center;
   width: 100%;
 }
-.sign-up-box{
-  width:70%;
+.sign-up-box {
+  width: 70%;
   /* background-color: var(--color1); */
-  background-image: radial-gradient( var(--color3),var(--color1),var(--color1),var(--color3));
+  background-image: radial-gradient(
+    var(--color3),
+    var(--color1),
+    var(--color1),
+    var(--color3)
+  );
 }
 
 .card {
+  font-size: 1.3em;
   background-color: #fff;
-  width: 70%; 
+  width: 70%;
   color: #333;
   border-radius: 15px;
   padding: 40px 50px;
@@ -162,21 +168,34 @@ footer {
   left: 20%; 
 }
 
+.cardReview div {
+  position: relative;
+  border-radius: 25px;
+  color: blue;
+  width: 60%;
+  left: 30%;
+}
+
+.recentReviews {
+  font-size: 3em; 
+  font-family: "Permanent Marker", cursive;
+  color:rgb(123, 45, 38)
+}
+
 /* Nav bar */
 /* .navbar{
   background-image: linear-gradient(var(--color3),var(--color2),var(--color3));
   z-index: 1;
 } */
 
-.nav-button{
-  border:none;
-  width:100%;
+.nav-button {
+  border: none;
+  width: 100%;
   margin-top: 1rem;
-  font-family: 'Peralta', cursive;
+  font-family: "Peralta", cursive;
   color: var(--color5);
   font-weight: 100;
-  background-color: rgba(0,0,0,0);
-  
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* .navbar-dropdown,
