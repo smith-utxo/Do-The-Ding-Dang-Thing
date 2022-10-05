@@ -12,14 +12,15 @@ const Home = () => {
   console.log(reviews);
   return (
     <main className="page">
-      <div className="jumbo columns image is-5by3 is-centered">
-        <div className="column is-one-fifth"></div>
-        <img
-          className="column is-rounded is-three-fifths"
+      <div className="jumbo columns is-centered">
+        <div className='logo-holder column image is-5by3  '>
+          <img
+          className="logo is-rounded"
           src={logo}
           alt="logo"
-        />
-        <div className="column is-one-fifth"></div>
+        /> 
+        </div>
+       
       </div>
       <div>
         {loading ? (
