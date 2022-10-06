@@ -9,8 +9,9 @@ let reviews = [];
 // Per module 18
 mongoose
   .connect(
-    process.env.MONGODB_URI ||
-      "mongodb://127.0.0.1:27017/do-the-ding-dang-thing",
+    //process.env.MONGODB_URI ||
+    //  "mongodb://127.0.0.1:27017/do-the-ding-dang-thing"
+    "mongodb+srv://easyPass:ABC54321@cluster1.fvwozyg.mongodb.net/work?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -24,28 +25,32 @@ mongoose
   });
 
 function generateData() {
-    // Generate 100 random users that fit the User model
+  // Generate 100 random users that fit the User model
   function generateUsers() {
     const serviceArray = [
       {
         title: "Cleaning",
-        description: "Houses, stores, cars... whatever's dirty, someone out there can clean it for you."
+        description:
+          "Houses, stores, cars... whatever's dirty, someone out there can clean it for you.",
       },
       {
         title: "Electrical",
-        description: "One of these skilled electricians might spark your interest!"
+        description:
+          "One of these skilled electricians might spark your interest!",
       },
       {
         title: "Lawn and Garden",
-        description: "These green-thumbed gurus keep the great outdoors looking great!"
+        description:
+          "These green-thumbed gurus keep the great outdoors looking great!",
       },
       {
         title: "Plumbing",
-        description: "These pipemasters will help you achieve a state of flow again."
+        description:
+          "These pipemasters will help you achieve a state of flow again.",
       },
       {
         title: "Web Development",
-        description: "Taking your business global? They're here to help."
+        description: "Taking your business global? They're here to help.",
       },
     ];
 
@@ -72,7 +77,7 @@ function generateData() {
         email: email,
         password: password,
         phone: phone,
-       // services: services,
+        // services: services,
       });
     }
     console.log(users);
@@ -115,5 +120,6 @@ const seedDB = async () => {
 
 seedDB().then(() => {
   console.log("Successfully seeded database!");
+  process.exit(0);
 });
 // fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
