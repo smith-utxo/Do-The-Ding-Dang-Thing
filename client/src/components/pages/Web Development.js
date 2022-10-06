@@ -21,7 +21,7 @@ function WebDevelopment({ showModal, setShowModal }) {
       </div>
 
       <div className="card">
-      <h1>Username: Jessica Guico</h1><p>Description: I once hacked into my school and changed all my grades from A's to C's mid-semester. I like a challenge.</p>
+      <h1>Username: Jessica Guico</h1><p>Description: I once hacked into Pizza Hut and gave myself a lifetime supply of free Pizza.</p>
       </div>
 
       <div className="cardReview">
@@ -30,7 +30,7 @@ function WebDevelopment({ showModal, setShowModal }) {
       </div>
 
       <div className="card">
-      <h1>Username: Charles "In Charge" Werness</h1><p>Description: I hate everything.</p>
+      <h1>Username: Charles "In Charge" Werness</h1><p>Description: I hate everything... especially Windows.</p>
       </div>
 
       <div className="cardReview">
