@@ -17,7 +17,7 @@
   - [Questions](#Questions)
   
   ## Description
-  ![landing page](/public/Landing-Page.png)
+  ![landing page](/client/public/Landing-Page.png)
   Do the Ding Dang Thing is an app that is used for making that connection to somebody or somebodies to lend their skills to Do the Ding Dang Thing.  Whatever curveballs that life has thrown your way, there is someone local to you that can help you out....and by help, ummm, I mean uhhh, you gotta pay them for their services. But at least you don't have to do it!  Honey-do list....get outta here. Not enough time in the day, or energy to keep up? Don't worry about it, just find someone to Do the Ding Dang Thing!
 
   ## Installation
