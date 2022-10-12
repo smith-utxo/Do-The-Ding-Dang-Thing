@@ -8,13 +8,13 @@ const serviceSchema = new Schema(
     },
     description: {
       type: String,
-      required: true,
+      // required: true,
       maxLength: 150,
     },
-    users: [
+    username: [
       {
-        type: Schema.Types.ObjectId,
-        ref: "User",
+        type: String,
+        required:false
       },
     ],
   },

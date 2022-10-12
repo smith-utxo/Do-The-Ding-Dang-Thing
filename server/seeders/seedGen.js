@@ -1,45 +1,34 @@
 const { faker } = require("@faker-js/faker");
-const { User, Review, Service } = require("../models");
 
-const userGen = () => {
-  const seedServiceDB = async () => {
-    
-    await Service.insertMany(serviceArray);
-  };
-  seedServiceDB().then(() => {
-    console.log("Successfully seeded services!");
-  });
-
+const userGen = async() => {
+  
+  let userArr = [];
   for (let i = 0; i < 50; i++) {
-    let username = faker.internet.userName();
-    let email = faker.internet.email(`${username}`);
-    let password = faker.internet.password(12);
-    let phone = faker.phone.number("###-###-####");
-    let services =
-      serviceArray[
-        Math.floor(Math.random() * (serviceArray.length - 0 + 1) + 1)
-      ];
+    const username = faker.internet.userName();
+    const email = faker.internet.email(`${username}`);
+    const password = faker.internet.password(12);
+    const phone = faker.phone.number("###-###-####");    
 
-    users.push({
+    userArr.push({
       username: username,
       email: email,
       password: password,
       phone: phone,
-      // services: services,
     });
   }
-  console.log(users);
-  return users;
+
+  return userArr;
 };
 
-const reviewGen = () => {
+const reviewGen = (users) => {
+  let reviewArr = [];
   for (let i = 0; i < 20; i++) {
-    let reviewBody = faker.lorem.sentences(2);
-    let username = users[Math.floor(Math.random() * users.length)].username;
-    let createdAt = faker.date.recent();
-    let rating = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+    const reviewBody = faker.lorem.sentences(2);
+    const username = users[Math.floor(Math.random() * users.length)].username;
+    const createdAt = faker.date.recent();
+    const rating = Math.floor(Math.random() * (5 - 1 + 1) + 1);
 
-    reviews.push({
+    reviewArr.push({
       reviewBody: reviewBody,
       username: username,
       createdAt: createdAt,
@@ -47,24 +36,25 @@ const reviewGen = () => {
     });
   }
 
-  return reviews;
+  return reviewArr;
 };
 
-const serviceGen = () => {
-    for (let i = 0; i < 20; i++) {
-      let reviewBody = faker.lorem.sentences(2);
-      let username = users[Math.floor(Math.random() * users.length)].username;
-      let createdAt = faker.date.recent();
-      let rating = Math.floor(Math.random() * (5 - 1 + 1) + 1);
-  
-      reviews.push({
-        reviewBody: reviewBody,
-        username: username,
-        createdAt: createdAt,
-        rating: rating,
-      });
-    }
-  
-    return reviews;
-  };
-module.exports = userGen, reviewGen, serviceGen;
+const serviceGen = async (users) => {
+
+  let serviceArr = [];
+
+  for (let i = 0; i < 20; i++) {
+    let title = faker.company.name();
+    let description = faker.lorem.paragraph();
+    let username = users[Math.floor(Math.random() * users.length)].username;
+
+    serviceArr.push({
+      title: title,
+      description: description,
+      username: username
+    });
+  }
+
+  return serviceArr;
+};
+module.exports = {userGen, reviewGen, serviceGen};

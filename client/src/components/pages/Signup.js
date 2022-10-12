@@ -28,6 +28,8 @@ const Signup = () => {
     event.preventDefault();
 
     try {
+      console.log('inside signup formSubmit');
+      console.log(data)
       const { data } = await addUser({
         variables: { ...formState },
       });
