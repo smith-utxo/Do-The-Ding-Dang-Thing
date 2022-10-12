@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_REVIEW } from "../../utils/queries";
 import ReviewList from "../ReviewList/index";
-import logo from "../../assets/logo.PNG";
+import placeholder from "../../assets/placeholder.jpg";
 // the loading property comes with apollo and indicates that the request isn't done just yet. When the request completes, the information is stored in the destructured data property
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
         <div className='logo-holder column image is-5by3  '>
           <img
           className="logo is-rounded"
-          src={logo}
+          src={placeholder}
           alt="logo"
         /> 
         </div>
