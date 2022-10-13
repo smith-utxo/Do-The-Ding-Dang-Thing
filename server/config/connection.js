@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-require ('dotenv').config();
+// require("dotenv").config();
+
 
 mongoose
   .connect(
@@ -22,5 +23,12 @@ mongoose
     console.error("Error connecting to Mongo", err);
     console.log(process.env.MONGODB_URI);
   });
+
+
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 module.exports = mongoose.connection;

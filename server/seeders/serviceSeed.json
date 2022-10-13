@@ -1,0 +1,26 @@
+[
+    {
+      "title": "Cleaning",
+      "description":
+        "Houses, stores, cars... whatever's dirty, someone out there can clean it for you."
+    },
+    {
+      "title": "Electrical",
+      "description":
+        "One of these skilled electricians might spark your interest!"
+    },
+    {
+      "title": "Lawn and Garden",
+      "description":
+        "These green-thumbed gurus keep the great outdoors looking great!"
+    },
+    {
+      "title": "Plumbing",
+      "description":
+        "These pipemasters will help you achieve a state of flow again."
+    },
+    {
+      "title": "Web Development",
+      "description": "Taking your business global? They're here to help."
+    }
+]
